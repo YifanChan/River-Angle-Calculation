@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>水口角度计算器</title>
+    <script src="angles.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        img {
+            width: 80%;
+            max-width: 500px;
+            margin-bottom: 70px;
+            margin-top: 40px;
+        }
+
+        .input-block {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .input-label {
+            text-align: left;
+            margin-bottom: 10px;
+            display: block;
+        }
+       
+       
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: calc(40%);
+            max-width: 300px;
+            min-width: 100px;
+            box-sizing: border-box;
+        }
+
+        input.default {
+            color: #c3c1c1; /* 灰色文本颜色 */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0453a8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #f6a326;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <h1>水口角度计算</h1>
+    <label for="coord_p">个人所在观测位置的经纬度坐标（经度，纬度）:</label>
+    <input type="text" id="coord_p" class="default" value="31.674338,120.680722"><br>
+    <label for="coord_m">向线上观测点的经纬度坐标（经度，纬度）:</label>
+    <input type="text" id="coord_m" class="default" value="31.672677,120.678198"><br>
+    <label for="coord_en">入水口观测点的经纬度坐标（经度，纬度）:</label>
+    <input type="text" id="coord_en" class="default" value="31.681267,120.671831"><br>
+    <label for="coord_ex">出水口观测点的经纬度坐标（经度，纬度）:</label>
+    <input type="text" id="coord_ex" class="default" value="31.666377,120.684909"><br>
+    <button onclick="handleInputAndCalculate()">计算角度</button>
+    <p id="result"></p>
+    <p>使用说明：在地图（如Google Map）上按照需要依次选点，复制选中的坐标到输入框，自动计算入水口和出水口角度。</p>
+    <img src="AngleDemo.png" alt="Angle Calculation Image" style="width: 100%; max-width: 500px;">
+</body>
+</html>
